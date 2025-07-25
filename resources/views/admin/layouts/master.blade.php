@@ -10,7 +10,7 @@
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <div class="app-wrapper">
-        @include('admin.include.header')
+        @include('admin.layouts.header')
         @include('admin.layouts.sidebar')
         @yield('content')
         @include('admin.layouts.footer')
