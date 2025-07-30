@@ -7,7 +7,7 @@
                      </a>
                  </li>
                  <li class="nav-item d-none d-md-block">
-                     <a href="{{ route('admindashboard') }}" class="nav-link">داشبورد</a>
+                     <a href="{{ route('admin.dashboard') }}" class="nav-link">داشبورد</a>
                  </li>
              </ul>
              <ul class="navbar-nav ms-auto">

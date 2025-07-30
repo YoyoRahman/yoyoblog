@@ -1,7 +1,7 @@
      <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
          <div class="sidebar-brand">
 
-             <a href="{{ 'admin.dashboard' }}" class="brand-link">
+             <a href="{{ route('admin.dashboard') }}" class="brand-link">
 
                  <img src="../../dist/assets/img/AdminLTELogo.png" alt="Yoyo Blog"
                      class="brand-image opacity-75 shadow"> <span class="brand-text fw-light">Yoyo Blog</span> </a>
@@ -11,7 +11,7 @@
                  <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
                      data-accordion="false">
                      <li class="nav-item menu-open">
-                         <a href="#" class="nav-link active">
+                         <a href="{{ route('admin.dashboard') }}" class="nav-link active">
                              <i class="nav-icon bi bi-speedometer"></i>
                              <p>
                                  داشبورد
@@ -49,7 +49,7 @@
                                          class="nav-icon bi bi-circle"></i>
                                      <p>افزودن دسته بندی ها</p>
                                  </a> </li>
-                             <li class="nav-item"> <a href="#" class="nav-link"> <i
+                             <li class="nav-item"> <a href="{{ route('admin.category.index') }}" class="nav-link"> <i
                                          class="nav-icon bi bi-circle"></i>
                                      <p>لیست دسته بندی ها</p>
                                  </a> </li>
