@@ -11,11 +11,15 @@ class CategoryController extends Controller
         return view('admin.category.index');
     }
 
-    public function create() {}
+    public function create() {
+        return view('admin.category.create');
+    }
 
     public function store(Request $request) {}
 
-    public function show(string $id) {}
+    public function show(string $id) {
+        return view('admin.category.show');
+    }
 
 
     public function edit(string $id) {}
