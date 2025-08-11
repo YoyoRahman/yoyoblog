@@ -3,8 +3,8 @@
 
              <a href="{{ route('admin.dashboard') }}" class="brand-link">
 
-                 <img src="../../dist/assets/img/AdminLTELogo.png" alt="Yoyo Blog"
-                     class="brand-image opacity-75 shadow"> <span class="brand-text fw-light">Yoyo Blog</span> </a>
+                 <img src="../../dist/assets/img/AdminLTELogo.png" alt="Yoyo Blog" class="brand-image opacity-75 shadow">
+                 <span class="brand-text fw-light">Yoyo Blog</span> </a>
          </div>
          <div class="sidebar-wrapper">
              <nav class="mt-2"> <!--begin::Sidebar Menu-->
@@ -26,11 +26,11 @@
                              </p>
                          </a>
                          <ul class="nav nav-treeview">
-                             <li class="nav-item"> <a href="#" class="nav-link"> <i
+                             <li class="nav-item"> <a href="{{ route('admin.post.create') }}" class="nav-link"> <i
                                          class="nav-icon bi bi-circle"></i>
                                      <p>افزودن پست ها</p>
                                  </a> </li>
-                             <li class="nav-item"> <a href="#" class="nav-link"> <i
+                             <li class="nav-item"> <a href="{{ route('admin.post.index') }}" class="nav-link"> <i
                                          class="nav-icon bi bi-circle"></i>
                                      <p>لیست پست ها</p>
                                  </a> </li>
@@ -38,8 +38,7 @@
 
                          </ul>
                      </li>
-                     <li class="nav-item"> <a href="#" class="nav-link"> <i
-                                 class="nav-icon bi bi bi-tags"></i>
+                     <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi bi-tags"></i>
                              <p>
                                  دسته بندی ها <i class="nav-arrow bi bi-chevron-right"></i>
                              </p>
@@ -68,17 +67,25 @@
                              </p>
                          </a>
                          <ul class="nav nav-treeview">
-                             <li class="nav-item"> <a href="#" class="nav-link"> <i
-                                         class="nav-icon bi bi-circle"></i>
+                             <li class="nav-item"> <a href="{{ route('admin.comment.index', ['status' => '0']) }}"
+                                     class="nav-link"> <i class="nav-icon bi bi-circle"></i>
                                      <p>نظرات در انتظار</p>
                                  </a>
                              </li>
-                             <li class="nav-item"> <a href="#" class="nav-link">
+                             <li class="nav-item"> <a href="{{ route('admin.comment.index', ['status' => '1']) }}"
+                                     class="nav-link">
                                      <i class="nav-icon bi bi-circle"></i>
                                      <p>نظرات تایید شده</p>
                                  </a>
                              </li>
-                             <li class="nav-item"> <a href="#" class="nav-link">
+                             <li class="nav-item">
+                                 <a href="{{ route('admin.comment.index', ['status' => '2']) }}" class="nav-link">
+                                     <i class="nav-icon bi bi-circle"></i>
+                                     <p>نظرات رد شده</p>
+                                 </a>
+                             </li>
+                             <li class="nav-item">
+                                 <a href="{{ route('admin.comment.index') }}" class="nav-link">
                                      <i class="nav-icon bi bi-circle"></i>
                                      <p>تمام نظرات</p>
                                  </a>
@@ -88,7 +95,7 @@
 
                      <li class="nav-header">کاربران</li>
                      <li class="nav-item">
-                         <a href="#" class="nav-link">
+                         <a href="{{ route('admin.user.index') }}" class="nav-link">
                              <i class="nav-icon bi bi-people-fill"></i>
                              <p>کاربران</p>
                          </a>
@@ -96,7 +103,7 @@
 
                      <li class="nav-header">تنظیمات</li>
                      <li class="nav-item">
-                         <a href="#" class="nav-link">
+                         <a href="{{ route('admin.token.index') }}" class="nav-link">
                              <i class="nav-icon bi bi-key-fill fs-5"></i>
                              <p>توکن ها</p>
                          </a>

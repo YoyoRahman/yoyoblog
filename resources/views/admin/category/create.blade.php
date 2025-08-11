@@ -25,12 +25,13 @@
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="name">عنوان</label>
-                                        <input type="text" id="name" name="name" value="#"
+                                        <input type="text" id="name" name="name" value="{{ old('name') }}"
                                             class="form-control">
-
+                                        @error('name')
                                             <div class="text-danger">
-                                                <p>محتوای خطا</p>
+                                                <p>{{ $message }}</p>
                                             </div>
+                                        @enderror
 
                                     </div>
                                 </div>
@@ -40,17 +41,17 @@
                                         <select name="parent_id" id="parent_id" class="form-select" data-choices
                                             data-selecttext="کلیک برای انتخاب">
                                             <option value="">انتخاب دسته بندی والد</option>
-                                            <option value="1">انتخاب دسته بندی والد</option>
-                                            <option value="2">انتخاب دسته بندی والد</option>
-                                            {{-- @foreach ($categories as $parent)
+                                            @foreach ($categories as $parent)
                                                 <option value="{{ $parent->id }}" @selected(old('parent_id') == $parent->id)>
                                                     {{ $parent->name }}</option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
 
+                                        @error('parent_id')
                                             <div class="text-danger">
-                                                <p>محتوای خطا</p>
+                                                <p>{{ $message }}</p>
                                             </div>
+                                        @enderror
 
                                     </div>
                                 </div>
@@ -59,9 +60,11 @@
                                         <label for="description">توضیحات</label>
                                         <textarea name="description" id="description" cols="5" rows="5" class="form-control">{{ old('description') }}</textarea>
 
+                                        @error('description')
                                             <div class="text-danger">
-                                                <p>محتوای خطا</p>
+                                                <p>{{ $message }}</p>
                                             </div>
+                                        @enderror>
 
                                     </div>
                                 </div>

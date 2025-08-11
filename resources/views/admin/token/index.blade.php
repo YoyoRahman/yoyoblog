@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'پست ها - نوا بلاگ')
+@section('title', 'توکن های دسترسی - نوا بلاگ')
 
 @section('content')
     <main class="app-main">
@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h3 class="mb-0">پست ها</h3>
+                        <h3 class="mb-0">توکن های دسترسی</h3>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <div class="card-tools">
-                                    <a href="{{ route('admin.post.create') }}" class="btn btn-success">
+                                    <a href="{{ route('admin.token.create') }}" class="btn btn-success">
                                         <i class="bi bi-plus"></i>
                                         افزودن
                                     </a>
@@ -29,39 +29,23 @@
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th style="width: 5%">#</th>
-                                            <th style="width: 10%">تصویر</th>
-                                            <th>عنوان</th>
-                                            <th>دسته بندی</th>
-                                            <th>نویسنده</th>
-                                            <th style="width: 20%">عملیات</th>
+                                            <th style="width: 40%">توکن</th>
+                                            <th>کاربر</th>
+                                            <th>دسترسی</th>
+                                            <th>توضیحات</th>
+                                            <th style="width: 10%">عملیات</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr class="align-middle">
-                                            <td>1.</td>
+                                            <td><code>shgjk34hkndfvkn2398yxcvy9df</code></td>
+                                            <td>کاربر شماره 1</td>
+                                            <td>خواندن - نوشتن</td>
+                                            <td>توضیحات ندارد</td>
                                             <td>
-                                                <img src="{{ asset('assets/images/post-1.jpg') }}" alt="post image"
-                                                    class="w-100 rounded">
-                                            </td>
-                                            <td>مقالات عملی</td>
-                                            <td>مقالات علمی</td>
-                                            <td>سعید نوری</td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary" data-bs-title="نمایش"
-                                                    data-bs-toggle="tooltip" data-bs-placement="top"><i
-                                                        class="bi bi-eye-fill text-white"></i></a>
-                                                <a href="#" class="btn btn-warning" data-bs-title="ویرایش"
-                                                    data-bs-toggle="tooltip" data-bs-placement="top"><i
-                                                        class="bi bi-pencil-fill text-white"></i></a>
-                                                <button type="button" class="btn btn-danger" data-bs-title="حذف"
-                                                    data-bs-toggle="tooltip" data-bs-placement="top"
-                                                    onclick="deleteItem(this)" data-url="#" data-title=""
-                                                    data-token="{{ csrf_token() }}"><i
-                                                        class="bi bi-trash text-white"></i></button>
+                                                <button type="button" class="btn btn-danger" data-bs-title="حذف" data-bs-toggle="tooltip" data-bs-placement="top" onclick="deleteItem(this)" data-url="#" data-title="" data-token="{{ csrf_token() }}"><i class="bi bi-trash text-white"></i></button>
                                             </td>
                                         </tr>
-
                                     </tbody>
                                 </table>
                             </div>

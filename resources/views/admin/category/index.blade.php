@@ -46,67 +46,30 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="align-middle">
-                                        <td>1.</td>
-                                        <td>مقالات عملی</td>
-                                        <td>منوی اصلی</td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary"><i
-                                                    class="bi bi-eye-fill text-white"></i></a>
-                                            <a href="#" class="btn btn-warning">
-                                                <i class="bi bi-pencil-fill text-white"></i>
-                                            </a>
-                                            <button type="button" class="btn btn-danger" onclick="deleteItem(this)"
-                                                data-url="#" data-title="" data-token="{{ csrf_token() }}"><i
-                                                    class="bi bi-trash text-white"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr class="align-middle">
-                                        <td>1.</td>
-                                        <td>مقالات عملی</td>
-                                        <td>منوی اصلی</td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary"><i
-                                                    class="bi bi-eye-fill text-white"></i></a>
-                                            <a href="#" class="btn btn-warning">
-                                                <i class="bi bi-pencil-fill text-white"></i>
-                                            </a>
-                                            <button type="button" class="btn btn-danger" onclick="deleteItem(this)"
-                                                data-url="#" data-title="" data-token="{{ csrf_token() }}"><i
-                                                    class="bi bi-trash text-white"></i></>
-                                        </td>
-                                    </tr>
-                                    <tr class="align-middle">
-                                        <td>1.</td>
-                                        <td>مقالات عملی</td>
-                                        <td>منوی اصلی</td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary"><i
-                                                    class="bi bi-eye-fill text-white"></i></a>
-                                            <a href="#" class="btn btn-warning"><i
-                                                    class="bi bi-pencil-fill text-white"></i></a>
-                                            <button type="button" class="btn btn-danger" onclick="deleteItem(this)"
-                                                data-url="#" data-title="" data-token="{{ csrf_token() }}"><i
-                                                    class="bi bi-trash text-white"></i></>
-                                        </td>
-                                    </tr>
-                                    <tr class="align-middle">
-                                        <td>1.</td>
-                                        <td>مقالات عملی</td>
-                                        <td>منوی اصلی</td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary"><i
-                                                    class="bi bi-eye-fill text-white"></i></a>
-                                            <a href="#" class="btn btn-warning">
-                                                <i class="bi bi-pencil-fill text-white"></i>
-                                            </a>
-                                            <button type="button" class="btn btn-danger" onclick="deleteItem(this)"
-                                                data-url="#" data-title="" data-token="{{ csrf_token() }}"><i
-                                                    class="bi bi-trash text-white
-
-                                                    "></i></button>
-                                        </td>
-                                    </tr>
+                                    @if ($categories->count() > 0)
+                                        @foreach ($categories as $category)
+                                            <tr class="align-middle">
+                                                <td>{{ $category->id }}.</td>
+                                                <td>{{ $category->name }}</td>
+                                                <td>{{ $category->parent_name }}</td>
+                                                <td>
+                                                    <a href="{{ route('admin.category.show', $category) }}" class="btn btn-primary" data-bs-title="نمایش"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"><i
+                                                            class="bi bi-eye-fill text-white"></i></a>
+                                                    <a href="{{ route('admin.category.edit', $category) }}" class="btn btn-warning" data-bs-title="ویرایش"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"><i
+                                                            class="bi bi-pencil-fill text-white"></i></a>
+                                                    <button type="button" class="btn btn-danger" data-bs-title="حذف"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        onclick="deleteItem(this)" data-url="{{ route('admin.category.destroy', $category) }}" data-title=""
+                                                        data-token="{{ csrf_token() }}"><i
+                                                            class="bi bi-trash text-white"></i></button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    @else
+                                    @endif
+                                    <p>موردی یافت نشد</p>
                                 </tbody>
                             </table>
                         </div> <!-- /.card-body -->
