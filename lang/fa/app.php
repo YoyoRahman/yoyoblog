@@ -8,7 +8,7 @@ return [
     ],
     'comment_status'         => [
         'Pending'  => 'در انتظار',
-        'Approved' => 'تائید شده',
+        'roved' => 'تائید شده',
         'Rejected' => 'رد شده',
     ],
     'first_name'             => 'نام',
