@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::paginate();
         return view('admin.category.index', compact('categories'));
     }
 
@@ -21,7 +21,7 @@ class CategoryController extends Controller
         return view('admin.category.create', compact('categories'));
     }
 
-    public function store(Request  $request)
+    public function store(CategoryCreateRequest  $request)
     {
         Category::create($request->validated());
         return to_route('admin.category.index')->with('success', 'دسته بندی با موفقیت ایجاد شد.');
@@ -39,7 +39,7 @@ class CategoryController extends Controller
         return view('admin.category.edit', compact('category', 'categories'));
     }
 
-    public function update(Request $request, Category $category)
+    public function update(CategoryUpdateRequest $request, Category $category)
     {
         $category->update($request->validated());
         return to_route('admin.category.index')->with('success', 'دسته بندی با موفقیت ویرایش شد.');
