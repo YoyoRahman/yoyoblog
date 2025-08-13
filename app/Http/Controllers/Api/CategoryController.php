@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     public function index(Request $request)
     {
-        $categories = Category::paginate($request->filled('per_page') ? $request->per_page : 15);
+        $categories = Category::paginate($request->filled('per_page') ? $request->per_page :3);
         return CategoryResource::collection($categories);
     }
 
